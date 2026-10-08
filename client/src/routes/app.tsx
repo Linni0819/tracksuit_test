@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "../components/header/header.tsx";
 import { Insights } from "../components/insights/insights.tsx";
+// @deno-types="../types/css.d.ts"
 import styles from "./app.module.css";
 import type { Insight } from "../schemas/insight.ts";
 

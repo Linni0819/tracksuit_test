@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { cx } from "../../lib/cx.ts";
+// @deno-types="../../types/css.d.ts"
 import styles from "./modal.module.css";
 
 export type ModalProps = {

@@ -41,11 +41,11 @@ router.get("/insights/:id", (ctx) => {
   ctx.response.status = 200;
 });
 
-router.get("/insights/create", (ctx) => {
+router.get("/insights/create", (_ctx) => {
   // TODO
 });
 
-router.get("/insights/delete", (ctx) => {
+router.get("/insights/delete", (_ctx) => {
   // TODO
 });
 
