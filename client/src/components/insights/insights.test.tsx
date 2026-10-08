@@ -5,16 +5,18 @@ import { Insights } from "./insights.tsx";
 const TEST_INSIGHTS = [
   {
     id: 1,
-    brandId: 1,
-    date: new Date(),
+    brand: 1,
+    createdAt: new Date(),
     text: "Test insight",
   },
-  { id: 2, brandId: 2, date: new Date(), text: "Another test insight" },
+  { id: 2, brand: 2, createdAt: new Date(), text: "Another test insight" },
 ];
 
 describe("insights", () => {
   it("renders", () => {
-    const { getByText } = render(<Insights insights={TEST_INSIGHTS} />);
+    const { getByText } = render(
+      <Insights insights={TEST_INSIGHTS} onDelete={async () => {}} />,
+    );
     expect(getByText(TEST_INSIGHTS[0].text)).toBeTruthy();
   });
 });

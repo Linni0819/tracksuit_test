@@ -30,12 +30,20 @@
 }
 
 .insight-delete {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
   width: var(--size-5);
   height: var(--size-5);
   cursor: pointer;
   transition: stroke 250ms ease;
   &:hover {
-    stroke: var(--color-red-500);
+    color: var(--color-red-500);
+  }
+  &:disabled {
+    cursor: wait;
+    opacity: 0.5;
   }
 }
 

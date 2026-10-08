@@ -1,12 +1,19 @@
+// @deno-types="@types/react"
 import { useState } from "react";
 import { Button } from "../button/button.tsx";
 // @deno-types="../../types/css.d.ts"
 import styles from "./header.module.css";
 import { AddInsight } from "../add-insight/add-insight.tsx";
+import type { NewInsight } from "../../lib/insights-api.ts";
 
 export const HEADER_TEXT = "Suit Tracker Insights";
 
-export const Header = () => {
+type HeaderProps = {
+  onCreate(input: NewInsight): Promise<void>;
+  disabled?: boolean;
+};
+
+export const Header = ({ onCreate, disabled }: HeaderProps) => {
   const [addInsightOpen, setAddInsightOpen] = useState(false);
 
   return (
@@ -17,6 +24,7 @@ export const Header = () => {
           <Button
             label="Add insight"
             theme="secondary"
+            disabled={disabled}
             onClick={() => setAddInsightOpen(true)}
           />
         </div>
@@ -24,6 +32,7 @@ export const Header = () => {
       <AddInsight
         open={addInsightOpen}
         onClose={() => setAddInsightOpen(false)}
+        onCreate={onCreate}
       />
     </>
   );

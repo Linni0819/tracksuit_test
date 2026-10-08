@@ -16,7 +16,7 @@ export default defineConfig({
     outDir: "./dist",
     emptyOutDir: true,
   },
-  plugins: [react(), deno()],
+  plugins: [react(), ...(process.env.VITEST ? [] : [deno()])],
   server: {
     port: env.clientPort,
     fs: {
