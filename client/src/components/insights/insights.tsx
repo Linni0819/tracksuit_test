@@ -45,7 +45,7 @@ export const Insights = ({ insights, className, onDelete }: InsightsProps) => {
                   </span>
                   <div className={styles["insight-meta-details"]}>
                     <time dateTime={createdAt.toISOString()}>
-                      {createdAt.toLocaleDateString()}
+                      {createdAt.toLocaleString()}
                     </time>
                     <button
                       type="button"

@@ -50,4 +50,5 @@
 .insight-content {
   font: var(--text-lg);
   margin: var(--size-4) 0 0;
+  white-space: pre-wrap;
 }
